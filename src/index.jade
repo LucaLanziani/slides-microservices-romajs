@@ -1,0 +1,111 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Microservices and Seneca
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section
+        h1 Microservices
+        h1 &
+        h1 Seneca
+
+      section
+        h2 Luca Lanziani
+        h3 Software Engineer at <a href="http://nearform.com">nearForm</a>
+        h3 Twitter <a href="https://twitter.com/lucalanziani">@lucalanziani</a>
+
+      section
+        h2 Microservices
+        blockquote(cite="http://wikipedia.com") In computing, microservices is a software architecture style in which complex applications are composed of small, independent processes communicating with each other using language-agnostic APIs. These services are small, highly decoupled and focus on doing a small task, facilitating a modular approach to system-building. - <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">wikipedia</a>
+        
+      section
+        h2 SOA?
+        h3.bullet yes but with constraints
+        ul.align-left.circle
+          li micro services
+          li no central smart bus
+          li smart services
+          li dumb pipes
+          li decentralized data management
+
+      section
+        h2 VS
+        table.border
+          tr
+            th Monolitic
+            th Microservices
+          tr
+            td Linear Scaling
+            td Granular Scaling
+          tr
+            td Simplicity
+            td Partial Deployment
+          tr
+            td Consistency
+            td Availability
+          tr
+            td Easy Refactoring
+            td Simplify SoC
+          tr
+            td Code Consistency
+            td Multi Language
+          
+      section
+        h2 What
+        h3.bullet (James Lewis/Martin Fowler)
+        ul.align-left.square
+          li Componentization via Services
+          li Organized around Business Capabilities
+          li Products not Projects
+          li Smart endpoints and dumb pipes
+          li Decentralized Governance
+          li Decentralized Data Management
+          li Infrastructure Automation
+          li Design for failure
+          li Evolutionary Design
+
+      section
+        h3 Should I switch to microservices?
+        ul
+          li <h2>YES!</h2>
+          li <h2>NO!</h2>
+          li <h2>IT DEPENDS!!!!</h2>
+
+      section
+        h2 Seneca
+        h3 <a href="http://senecajs.org" target="_blank">senecajs.org</a>
+        p Seneca is a microservices toolkit for Node.js. It helps you write clean, organized code that you can scale and deploy at any time.
+        
+      section
+        h2 Seneca (code time)
+        pre
+          code.language-bash.
+            $ npm install seneca --save 
+      
+      section
+        h2 Seneca (code time)
+        pre
+          code.language-javascript.
+            var seneca = require( 'seneca' )()
+            seneca.add({role: 'math', cmd: 'sum'}, function (msg, cb) {
+              var sum = msg.l + msg.r
+              cb(null, {answer: sum})
+            })
+            
+            seneca.act({role: 'math', cmd: 'sum', l: 1, r: 2}, console.log})
+
+      section.emphatic-text(data-bespoke-backdrop='emphatic')
+        h2 Thanks!
+        br
+        h3 <a href="https://twitter.com/lucalanziani" target="_blank">@lucalanziani</a>
+        h3 at
+        h3 <a href="http://www.romajs.org/" target="_blank">Romajs</a> - 2015
+
+    script(src='build/build.js')

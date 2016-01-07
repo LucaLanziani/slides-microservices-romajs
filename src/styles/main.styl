@@ -1,0 +1,46 @@
+// New to Stylus? Check out http://learnboost.github.io/stylus
+// Use modern CSS thanks to Autoprefixer: https://github.com/ai/autoprefixer
+
+// Import CSS from "node_modules" and "bower_components"
+// thanks to Stylus' "import css" and "paths" options
+
+@import 'prism/themes/prism-okaidia.css'
+// Check out "bower_components/prism/themes/" for available themes
+
+.align-left
+  text-align: left
+
+ul.circle
+  list-style-type: circle
+
+ul.square
+  list-style-type: square
+
+table.border
+  border-collapse: collapse
+
+table.border
+  &, th, td
+    border: 1px solid black
+    text-align: left
+    padding: 15px 30px
+  th
+    text-align: center
+
+blockquote
+  background: #f9f9f9
+  border-left: 10px solid #ccc
+  margin: 1.5em 10px
+  padding: 0.5em 10px
+  quotes: "\201C""\201D""\2018""\2019"
+
+blockquote:before
+  color: #ccc
+  content: open-quote
+  font-size: 4em
+  line-height: 0.1em
+  margin-right: 0.25em
+  vertical-align: -0.4em
+
+blockquote p
+  display: inline
